@@ -1,0 +1,78 @@
+*.html
+
+# Vivado
+
+*.Xil
+*.jou
+*.log
+*.str
+*.xsa
+*.bit
+
+fpga.cache/
+fpga.hw/
+fpga.runs/
+fpga.sim/
+fpga.gen/
+
+# Vitis
+
+*.o
+*.d
+*.a
+*.elf
+*.bin
+*.BIN
+*.bif
+
+export/
+.log/
+Debug/
+Release/
+_ide/
+.metadata/
+
+.analytics
+RemoteSystemsTempFiles/
+
+# Eclipse
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+.apt_generated_test/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
+#.project
