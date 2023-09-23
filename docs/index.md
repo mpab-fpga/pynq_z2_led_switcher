@@ -20,7 +20,7 @@ pynq_z2_led_switcher/
   |-led_switcher_app/
   |-led_switcher_app_system/
   |-pynq_z2_pfm/
-|-fpga/ (Vivado projects)
+|-fpga/ (Vivado project)
 |-clean.bat (nukes the fpga and firmware folders)
 |-create.bat (creates the fpga and firmware projects, generates the hardware spec)
 |-create-firmware.tcl (creates the firmware projects)

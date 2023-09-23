@@ -33,7 +33,7 @@ $NAME/
   |-$NAME_app/ (application project)
   |-$NAME_app_system/ (system project)
   |-$BOARD_pfm/ (platform project)
-|-fpga/ (Vivado projects)
+|-fpga/ (Vivado project)
 |-scripts/ (Project scripts)
 
 $NAME is the name of the project
@@ -53,7 +53,7 @@ led_switcher/
   |-led_switcher_app/
   |-led_switcher_app_system/
   |-pynq_z2_pfm/
-|-fpga/ (Vivado projects)
+|-fpga/ (Vivado project)
 ```
 
 ## Start Here
