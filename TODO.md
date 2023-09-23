@@ -4,6 +4,7 @@
 
 - autoconfigure boot image in scripts
 - fix screencaps to reflect naming conventions
+- split the walkthrough into separate Hardware/PL and Firmware/PS
 
 ## Done
 

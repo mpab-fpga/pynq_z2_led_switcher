@@ -21,9 +21,9 @@
 ## Xilinx/fpga/Vitis setup
 
 1. Vivado  
-FPGA design and generation
+   FPGA design and generation
 2. Vitis  
-Firmware/Software Applications
+   Firmware/Software Applications
 
 ## Project structure and naming conventions
 
@@ -58,7 +58,7 @@ led_switcher/
 
 ## Start Here
 
-**Prerequisites:** 
+**Prerequisites:**
 
 - Xilinx suite is installed
 - xsct is on the path
@@ -123,18 +123,18 @@ Click Finish, then OK (the I/O Port definitions will be changed below, click yes
 
 ```verilog
 module top(
-    // components 
+    // components
     input switch_0,
     input switch_1,
     output led_0,
     output led_1,
-    
+
     input [3:0] btn,
     output [3:0] led
-    
+
     );
     // wiring
-    assign led_0 = switch_0; 
+    assign led_0 = switch_0;
     assign led_1 = switch_1;
     assign led = btn;
 endmodule
@@ -143,8 +143,6 @@ endmodule
 - Constraints/Add Sources/Add or create constraints/Create File
 
 <img src="./image-12.png" width="400" />
-
-
 
 <img src="./image-13.png" width="800" />
 
@@ -246,16 +244,16 @@ Open Vitis (Eclipse) Workspace, close the Welcome page
 
 - Create Platform: File->New->Platform Project
   - Platform project name $BOARD_pfm
-  - Create from XSA (select ../fpga/*_wrapper.xsa file (select Generate boot components)->Finish
+  - Create from XSA (select ../fpga/\*\_wrapper.xsa file (select Generate boot components)->Finish
 
 <img src="./image-22.png" width="1000" />
 
 <img src="./image-24.png" width="700" />
 
-**Note:** This creates two copies of the .xsa file in the platform project @ ./export/*platform/hw & ./hw)
+**Note:** This creates two copies of the .xsa file in the platform project @ ./export/\*platform/hw & ./hw)
 
 - Create Platform - add FAT file system library (xilffs)
-  - Select *.spr file in platform
+  - Select \*.spr file in platform
   - Select bottom Board Support Package in main window
   - -> Modify BSP Settings...
   - select xilffs library -> OK
@@ -307,6 +305,7 @@ Open Vitis (Eclipse) Workspace, close the Welcome page
 ### Vitis - Create Boot Image Application
 
 ---
+
 **Reminder:** To prevent a "This application requires xilffs library in the Board Support Package" error
 
 - In Assistant Window, right click Application
@@ -325,7 +324,7 @@ Open Vitis (Eclipse) Workspace, close the Welcome page
 
 - We need 3 boot image partitions
   - (bootloader): ./firmware/\$BOARD_pfm/export/\$BOARD_pfm/sw/\$BOARD_pfm/boot/fsb.elf
-  - bitstream: ./fpga/fpga.runs/impl_1/*.bit <-- **Important!** Use the fpga project bitstream to ensure changes stay in synch
+  - bitstream: ./fpga/fpga.runs/impl_1/\*.bit <-- **Important!** Use the fpga project bitstream to ensure changes stay in synch
   - \$APP.elf: ./firmware/\$APP_app/Debug/\$APP_app.elf
 - -> Create Image
 
@@ -335,10 +334,12 @@ Open Vitis (Eclipse) Workspace, close the Welcome page
 
 Overwite any existing output files when prompted
 
-Now format an SD card as FAT32 and copy the \$NAME_app_system project BOOT.bin to the SD card  
+Now format an SD card as FAT32 and copy the \$NAME_app_system project BOOT.bin to the SD card
+
 ```sh
-./firmware/SNAME_app_system/_ide/bootimage/BOOT.bin -> SD:/BOOT.bin  
+./firmware/SNAME_app_system/_ide/bootimage/BOOT.bin -> SD:/BOOT.bin
 ```
+
 (There is another BOOT.BIN file in ./firmware/\$NAME_app_system/Debug/sd_card/, don't use this one!)
 
 **Note:** If the hardware specification (xsa file) has changed, the platform can be updated in Vitis
@@ -356,7 +357,7 @@ Issues exporting hardware? There could be a lock on the bitstream file
 - restart and regenerate
 
 Design changes not reflected in BOOT.bin?  
-(test by deleting ./fpga/*.xsa and checking the file date)  
+(test by deleting ./fpga/\*.xsa and checking the file date)  
 File->Export->Export Hardware
 
 Remember to update the hardware specification in firmware/\$BOARD_pfm and rebuild the platform
