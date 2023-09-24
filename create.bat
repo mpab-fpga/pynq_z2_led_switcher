@@ -10,6 +10,7 @@ call :EXIT_IF_EXISTS .\firmware\pynq_z2_pfm
 call :EXIT_IF_EXISTS .\firmware\led_switcher_app
 call :EXIT_IF_EXISTS .\firmware\led_switcher_app_system
 
+:HARDWARE
 rd /S /Q gen > nul 2>&1
 mkdir gen
 pushd gen
@@ -23,15 +24,16 @@ pushd fpga
 call vivado -mode batch -nojournal -source ..\generate-xsa.tcl
 popd
 
+:FIRMWARE
 pushd firmware
 call xsct.bat ..\create-firmware.tcl
 popd
 
-goto :eof
+exit
 
 :EXIT_IF_EXISTS
 if exist  %~1 (
     echo WARNING: found %~1 - run clean.bat?
     (goto) 2>nul & endlocal & exit /b %ERRORLEVEL%
 )
-goto :eof
+goto :EOF

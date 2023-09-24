@@ -12,6 +12,7 @@
   - [Walkthrough - Firmware](#walkthrough---firmware)
     - [Vitis - Create Platform](#vitis---create-platform)
     - [Vitis - Create Application Project](#vitis---create-application-project)
+    - [Vitis - C Application](#vitis---c-application)
     - [Vitis - Serial Terminals](#vitis---serial-terminals)
     - [Vitis - Create Boot Image Application](#vitis---create-boot-image-application)
     - [Vitis - Configure Boot Image](#vitis---configure-boot-image)
@@ -289,6 +290,10 @@ Open Vitis (Eclipse) Workspace, close the Welcome page
 - Build the application
 
 **Note:** As the firmware doesn't interact with the hardware, there is no requirement to change the source code
+
+### Vitis - C Application
+
+This is just a stub as the logic is in the FPGA project
 
 ### Vitis - Serial Terminals
 
