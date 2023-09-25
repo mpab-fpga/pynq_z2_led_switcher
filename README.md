@@ -1,4 +1,4 @@
-# PYNQ-Z2 FPGA and firmware demonstration project
+# PYNQ-Z2 FPGA and firmware demonstration project (FPGA logic)
 
 Built using the Xilinx toolchain/toolsuite.  
 Should also be portable to other ZYNQ XC7Z020 compatible boards.  
