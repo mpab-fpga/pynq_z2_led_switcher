@@ -29,7 +29,7 @@ pushd firmware
 call xsct.bat ..\create-firmware.tcl
 popd
 
-exit
+goto :EOF
 
 :EXIT_IF_EXISTS
 if exist  %~1 (
