@@ -14,14 +14,14 @@ call :EXIT_IF_EXISTS .\firmware\led_switcher_app_system
 rd /S /Q gen > nul 2>&1
 mkdir gen
 pushd gen
-call vivado -mode batch -nojournal -source ..\create-fpga.tcl -tclargs --origin_dir ../assets/
+call vivado -mode batch -nojournal -source ../create-fpga.tcl -tclargs --origin_dir ../assets/
 popd
 
 robocopy .\gen\fpga .\fpga /S /MOV
 rd /S /Q gen > nul 2>&1
 
 pushd fpga
-call vivado -mode batch -nojournal -source ..\generate-xsa.tcl
+call vivado -mode batch -nojournal -source ../generate-xsa.tcl
 popd
 
 :FIRMWARE

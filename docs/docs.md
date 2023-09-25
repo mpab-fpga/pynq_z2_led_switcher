@@ -7,7 +7,7 @@
 
 ## Prerequisites
 
-- Xilinx tool-suite
+- Xilinx toolsuite
 - PYNQ-Z2 board (or ZYNQ XC7Z020 compatible)
 
 ## Manifest
@@ -92,3 +92,31 @@ The Firmware project supports creating a BOOT.bin image to run standalone off of
 The TUL PYNQ-Z2 board file is included to make this project as self-contained as possible
 
 <https://dpoauwgwqsy2x.cloudfront.net/Download/pynq-z2.zip>
+
+## FPGA Project
+
+### FPGA Project - Design
+
+<img src="./block_design.png" width="1024" />
+
+## Firmware Project
+
+## Firmware Project - C Application
+
+The application contains no logic and is included for demonstration purpuses
+
+### Firmware Project - Connect a Serial Terminal
+
+The application has four modes (states), selected by the DIP switches
+
+- Window->Show View->Vitis->Vitis Serial Terminal
+- Select '+' button in terminal and configure COM port
+- Serial port config
+  - 115200
+  - 8 bit
+  - no parity
+  - 1 stop bit
+  - no flow control
+- or use Tera Term
+
+<img src="./teraterm-cfg.png" width="800" />
